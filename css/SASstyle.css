@@ -1,8 +1,12 @@
-#grid-snap {
+#demo {
+	left: 375px;
+	top: 645px;
+	position: absolute;
+}
+
+#grid {
 	margin-left: 50px;
-    margin-top: 50px;
-	left: 72px;
-	top: 08px;
+	margin-top: 50px;
 	height: 578px;
 	width: 754px;
 	background-color: #C3CAD1;
@@ -14,13 +18,13 @@
 	height: 50px;
 	width: 33px;
 	cursor: pointer;
-	position: absolute;
+	position: relative;
 	border-radius: 0.75em;
-	transition-duration: 0.5s;
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -o-transition-property: -o-transform;
-    transition-property: transform;
+	transition-duration: 0.4s;
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-property: -moz-transform;
+	-o-transition-property: -o-transform;
+	transition-property: transform;
 }
 
 .src {
@@ -33,16 +37,9 @@
 	height: 60px;
 	width: 60px;
 	cursor: pointer;
-	position: relative;
-	display: block;
+	position: absolute;
 }
 
 .srcplay {
 	background-position: 0 0;
-}
-
-#demo {
-	left: 440px;
-	top: 645px;
-	position: absolute;
 }
