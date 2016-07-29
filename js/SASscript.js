@@ -27,7 +27,7 @@ for (var i=1; i<5; i++){
 
 //Listener attributes.
 console.log(Xdegree,Ydegree,Math.cos(Xdegree * (Math.PI / 180)),Math.cos(Ydegree * (Math.PI / 180)))
-contextListener.setPosition(460,300,0);
+contextListener.setPosition(360,300,0);
 contextListener.setOrientation(Math.cos(Xdegree * (Math.PI / 180)),Math.cos(Ydegree * (Math.PI / 180)),-1,0,1,0);
 
 //--- Drag elements with defined classes.

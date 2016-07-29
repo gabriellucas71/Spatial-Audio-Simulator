@@ -26,8 +26,7 @@ for (var i=1; i<5; i++){
 }
 
 //Listener attributes.
-console.log(Xdegree,Ydegree,Math.cos(Xdegree * (Math.PI / 180)),Math.cos(Ydegree * (Math.PI / 180)))
-contextListener.setPosition(460,300,0);
+contextListener.setPosition(360,260,0);
 contextListener.setOrientation(Math.cos(Xdegree * (Math.PI / 180)),Math.cos(Ydegree * (Math.PI / 180)),-1,0,1,0);
 
 //--- Drag elements with defined classes.
@@ -82,7 +81,7 @@ $('#head').click(function() {
 
 //--- Demonstration function.
 $('#demo').click(function() {
-	console.log ('Demo Function')
+	$("#head").position()
 });
 
 //--- Play/Stop Sound sources on click.
@@ -92,9 +91,7 @@ $('.src').click(function(event, ui) {
 	}else {
 		var Source = String('#'+ event.target.id);
 		var song;
-
 		song = audio[Source];
-		console.log();
 		playPause(event, song, audiostatus)
 	}
 });
@@ -102,11 +99,8 @@ $('.src').click(function(event, ui) {
 function playPause(event, song, audiostatus){
 	var Source = String('#'+ event.target.id);
 	console.log(Source)
-	//who is Source
 	if (!$(Source).hasClass("srcplay")) {
-		console.log(Source)
 		if (audiostatus == 'off') {
-			console.log(Source)
 			$(Source).addClass('srcplay');
 			//Play it.
 			song.play();
@@ -118,7 +112,7 @@ function playPause(event, song, audiostatus){
 	} else {
 		//Stop it.
 		song.pause();	
-		$("Source").removeClass('srcplay');
+		$(Source).removeClass('srcplay');
 		audiostatus = 'off';
 	}
 }
