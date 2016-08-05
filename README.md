@@ -28,7 +28,6 @@ Elements:
 How does it works:
 --------
 
-* Manually:
 
 * **Dragging:** Click and drag objects in the screen to your wanted position relative to the listener or drag the listener itself. The application computes how far or closer a audio source is from the listener and reproduces the spatialisation effect in the headphones. 
 
@@ -37,9 +36,7 @@ How does it works:
 
 
 
-* Demo function:
-
-The demo function starts all 4 oscillator noises and automatically drags the listener around them, in key comparison positions and orientations.
+* Demo function: The demo function starts all 4 oscillator noises and automatically drags the listener around them, in key comparison positions and orientations.
 
 
 
