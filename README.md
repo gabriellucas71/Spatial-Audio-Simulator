@@ -36,7 +36,7 @@ How does it works:
 
 
 
-* Demo function: The demo function starts all 4 oscillator noises and automatically drags the listener around them, in key comparison positions and orientations.
+* **Demo function:** The demo function starts all 4 oscillator noises and automatically drags the listener around them, in key comparison positions and orientations.
 
 
 
