@@ -2,7 +2,7 @@
 var l = 418;
 var t = 318;
 var Xdegree = 0;
-var Ydegree = 90;
+var Ydegree = -90;
 var context = window.AudioContext = window.AudioContext
 || window.webkitAudioContext;
 context = new AudioContext();
@@ -45,8 +45,9 @@ panner[4].setOrientation(-1, 0, 0);
 
 //Listener attributes.
 contextListener.setPosition(360, 260, 0);
-contextListener.setOrientation(Math.cos(Xdegree * (Math.PI / 180)), Math.cos(Ydegree * (Math.PI / 180)),0,0,1,0);
-console.log (Xdegree, Ydegree, Math.cos(Xdegree * (Math.PI / 180)), Math.cos(Ydegree * (Math.PI / 180)))
+//contextListener.setOrientation(-1,1,0,0,1,0);
+contextListener.setOrientation(0, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)),0,1,0);
+console.log (Xdegree, Ydegree, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)))
 
 //--- Drag elements with defined classes.
 $("#head").draggable({
@@ -133,8 +134,8 @@ function turn() {
 		'-o-transform' : "rotate(" + -Xdegree + "deg)",
 		'transform' : "rotate(" + -Xdegree + "deg)"
 	});
-	contextListener.setOrientation(Math.cos(Xdegree * (Math.PI / 180)), Math.cos(Ydegree * (Math.PI / 180)),0,0,1,0);
-	console.log(Math.cos(Xdegree * (Math.PI / 180)), Math.cos(Ydegree * (Math.PI / 180)))
+	contextListener.setOrientation(0, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)),0,1,0);
+	console.log(Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)))
 }
 
 //--- Turn on all sound sources.
