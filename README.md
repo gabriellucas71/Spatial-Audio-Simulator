@@ -18,26 +18,51 @@ For more details about audio spatialisation, please check:
 Elements:
 --------
 
-* 
+* Green arrow: Simulates the listener. Please note that the arrow has a nose-like orientation.
+
+* 4 Audio Sources: Simulates audio sources around a listener. Clicking on each one of them will start a sample oscillator noise. Please note that the outer cave is pointing to the front orientation.
+
+* Demonstration button: Starts an animated demonstration.
+
 
 How does it works:
 --------
 
 1. Manually:
 
-* *Dragging:* Click and drag objects in the screen to your wanted position relative to the listener or drag him  
+* **Dragging:** Click and drag objects in the screen to your wanted position relative to the listener or drag the listener itself. The application computes how far or closer a audio source is from the listener and reproduces the spatialisation effect in the headphones. 
 
-The application can be used by manually dragging objects around the screen, which simulates how the position of the object manipulated influences in the audio heard in the microphone  simulates the real world listener and audio sources 
 
-* *Rotate:* 
+* **Rotate:** In order to simulate the listener orientation of your choice, you are able to click on it and set the front orientation manually. Note that, as in real life, inverting the orientation can change the volume.  
+
+
 
 2. Demo function:
 
+The demo function start all the 4oscillator noises and automatically drags the listener around them, in key comparison positions and orientations.
+
+
+
+Application Overview
+--------
+
+![alt text][id]
+
+[id]: /docs/Overview.png "Title"
 
 
 
 
 
+
+
+WebAudio Api scheme
+--------
+
+
+![alt text][id]
+
+[id]: /docs/Webaudio.png "Title"
 
 
 
