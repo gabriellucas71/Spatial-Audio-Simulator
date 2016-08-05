@@ -45,8 +45,8 @@ panner[4].setOrientation(-1, 0, 0);
 
 //Listener attributes.
 contextListener.setPosition(360, 260, 0);
-contextListener.setOrientation(-1,1,0,0,1,0);
-//contextListener.setOrientation(0, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)),0,1,0);
+//contextListener.setOrientation(-1,1,0,0,1,0);
+contextListener.setOrientation(0, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)),0,1,0);
 console.log (Xdegree, Ydegree, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)))
 
 //--- Drag elements with defined classes.
