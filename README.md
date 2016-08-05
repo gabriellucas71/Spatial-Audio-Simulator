@@ -2,9 +2,8 @@ Spatial Audio Simulator
 =======================
 
 
-A HTML5 application that simulates how audio spatialisation influences in human
-hearing.
-————————
+A HTML5 application that simulates how audio spatialisation influences in human hearing.
+------------------------------------------------------------
 
 
 The Spatial Audio Simulator implements a virtualization of the effects that a movement in a audio source position or its orientation influences in human hearing.
@@ -17,12 +16,12 @@ For more details about audio spatialisation, please check:
 
 
 Elements:
-——
+--------
 
 * 
 
-How does it work:
-———
+How does it works:
+--------
 
 1. Manually:
 
