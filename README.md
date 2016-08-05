@@ -60,9 +60,9 @@ WebAudio Api scheme
 --------
 
 
-![alt text][id]
+![alt text][id2]
 
-[id]: /docs/Webaudio.png "Title"
+[id2]: /docs/Webaudio.png "Title"
 
 
 
