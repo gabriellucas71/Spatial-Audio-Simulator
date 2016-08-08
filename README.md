@@ -13,7 +13,7 @@ For more details about audio spatialisation, please check:
 
 * [Web audio API spatialisation](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics "Title") 
 
-
+**Please, use it with Mozilla Firefox or Chrome.**
 
 Elements:
 --------
@@ -71,4 +71,4 @@ WebAudio Api scheme
 
 
 
-© Dennis Guse PhD. & Gabriel Araujo B.Sc. Technische Universität Berlin, Germany. 06/2016 All Rights Reserved.
+© Gabriel Araujo B.Sc. Technische Universität Berlin, Germany. 06/2016 All Rights Reserved.

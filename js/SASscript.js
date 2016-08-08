@@ -32,10 +32,10 @@ for (var i = 1; i < 5; i++) {
 	oscillator[baseString + i].type = 'square';
 	panner[i].setPosition(source[i].src.offsetLeft, source[i].src.offsetTop, 0);
 }
-oscillator[baseString + 1].frequency.value = 50;
-oscillator[baseString + 2].frequency.value = 500;
-oscillator[baseString + 3].frequency.value = 300;
-oscillator[baseString + 4].frequency.value = 80;
+oscillator[baseString + 1].frequency.value = 160;
+oscillator[baseString + 2].frequency.value = 40;
+oscillator[baseString + 3].frequency.value = 360;
+oscillator[baseString + 4].frequency.value = 720;
 
 //Sources attributes.
 panner[1].setOrientation(1, 0, 0);
@@ -45,9 +45,9 @@ panner[4].setOrientation(-1, 0, 0);
 
 //Listener attributes.
 contextListener.setPosition(360, 260, 0);
-//contextListener.setOrientation(-1,1,0,0,1,0);
-contextListener.setOrientation(0, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)),0,1,0);
-console.log (Xdegree, Ydegree, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)))
+contextListener.setOrientation(1, 0, 0, 0, 1, 0);
+//contextListener.setOrientation(0, Math.cos(Xdegree * (Math.PI / 180)), Math.cos(Ydegree * (Math.PI / 180)),0,1,0);
+console.log(Xdegree, Ydegree, Math.cos(Xdegree * (Math.PI / 180)), Math.cos(Ydegree * (Math.PI / 180)))
 
 //--- Drag elements with defined classes.
 $("#head").draggable({
@@ -90,19 +90,38 @@ $('#head').click(function() {
 $('#demo').click(function() {
 	turnOnAll();
 	positionListenerDemo(l, t);
-	firstMove();	
-	U = setTimeout(function(){ secondMove() }, 7500);
-	V = setTimeout(function(){ thirdMove() }, 13000);
-	W = setTimeout(function(){ fourthMove() },20500);
-	X = setTimeout(function(){ fifthMove() }, 29000);
-	Y = setTimeout(function(){ sixthMove() }, 36000);
-	Z = setTimeout(function(){ seventhMove() }, 41500);
-	A = setTimeout(function(){ eighthMove() }, 48000);
-	B = setTimeout(function(){ ninthMove() }, 58500);
-	C = setTimeout(function(){ turnOffAll() }, 65000);
+	firstMove();
+	U = setTimeout(function() {
+		secondMove()
+	}, 7500);
+	V = setTimeout(function() {
+		thirdMove()
+	}, 13000);
+	W = setTimeout(function() {
+		fourthMove()
+	}, 20500);
+	X = setTimeout(function() {
+		fifthMove()
+	}, 29000);
+	Y = setTimeout(function() {
+		sixthMove()
+	}, 36000);
+	Z = setTimeout(function() {
+		seventhMove()
+	}, 41500);
+	A = setTimeout(function() {
+		eighthMove()
+	}, 48000);
+	B = setTimeout(function() {
+		ninthMove()
+	}, 58500);
+	C = setTimeout(function() {
+		turnOffAll()
+	}, 65000);
 });
 
-//--- Get the position of the Listener while dragging and sets the Listener position.
+//--- Get the position of the Listener while dragging and sets the Listener
+//position.
 function positionListener(event, ui) {
 	var listenerx = ui.position.left;
 	var listenery = ui.position.top;
@@ -134,8 +153,10 @@ function turn() {
 		'-o-transform' : "rotate(" + -Xdegree + "deg)",
 		'transform' : "rotate(" + -Xdegree + "deg)"
 	});
-	contextListener.setOrientation(0, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)),0,1,0);
-	console.log(Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)))
+	contextListener.setOrientation(0, Math.cos(Xdegree * (Math.PI / 180)), Math
+			.cos(Ydegree * (Math.PI / 180)), 0, 1, 0);
+	console.log(Math.cos(Xdegree * (Math.PI / 180)), Math.cos(Ydegree
+			* (Math.PI / 180)))
 }
 
 //--- Turn on all sound sources.
@@ -182,12 +203,14 @@ function firstMove() {
 		left : l
 	});
 	positionListenerDemo(l, t);
-	if (l < 69){
+	if (l < 69) {
 		console.log(l, t)
 		clearTimeout(T);
 		console.log(T)
 	} else {
-		T = setTimeout(function(){ firstMove() }, 1000);
+		T = setTimeout(function() {
+			firstMove()
+		}, 1000);
 	}
 }
 
@@ -199,12 +222,14 @@ function secondMove() {
 		left : l
 	});
 	positionListenerDemo(l, t);
-	if (t < 217){
+	if (t < 217) {
 		console.log(l, t)
 		clearTimeout(U);
 		console.log(U)
 	} else {
-		U = setTimeout(function(){ secondMove() }, 1000);
+		U = setTimeout(function() {
+			secondMove()
+		}, 1000);
 	}
 }
 
@@ -217,30 +242,34 @@ function thirdMove() {
 		left : l
 	});
 	positionListenerDemo(l, t);
-	if (t < 79){
+	if (t < 79) {
 		console.log(l, t)
 		clearTimeout(V);
 		console.log(V)
 		turn();
 	} else {
-		V = setTimeout(function(){ thirdMove() }, 1000);
+		V = setTimeout(function() {
+			thirdMove()
+		}, 1000);
 	}
 }
 
 function fourthMove() {
-	console.log(l)	
+	console.log(l)
 	l += +50;
 	$("#head").offset({
 		top : t,
 		left : l
 	});
 	positionListenerDemo(l, t);
-	if (l > 617){
+	if (l > 617) {
 		console.log(l, t)
 		clearTimeout(W);
 		console.log(W)
 	} else {
-		W = setTimeout(function(){ fourthMove() }, 1000);
+		W = setTimeout(function() {
+			fourthMove()
+		}, 1000);
 	}
 }
 
@@ -253,13 +282,15 @@ function fifthMove() {
 		left : l
 	});
 	positionListenerDemo(l, t);
-	if ( t > 217){
+	if (t > 217) {
 		turn();
 		console.log(l, t)
 		clearTimeout(X);
 		console.log(X)
 	} else {
-		X = setTimeout(function(){ fifthMove() }, 1000);
+		X = setTimeout(function() {
+			fifthMove()
+		}, 1000);
 	}
 }
 
@@ -271,12 +302,14 @@ function sixthMove() {
 		left : l
 	});
 	positionListenerDemo(l, t);
-	if (t > 457){
+	if (t > 457) {
 		console.log(l, t)
 		clearTimeout(Y);
 		console.log(Y)
 	} else {
-		Y = setTimeout(function(){ sixthMove() }, 1000);
+		Y = setTimeout(function() {
+			sixthMove()
+		}, 1000);
 	}
 }
 
@@ -289,30 +322,34 @@ function seventhMove() {
 		left : l
 	});
 	positionListenerDemo(l, t);
-	if (t > 565){
+	if (t > 565) {
 		turn();
 		console.log(l, t)
 		clearTimeout(Z);
 		console.log(Z)
 	} else {
-		Z = setTimeout(function(){ seventhMove() }, 1000);
+		Z = setTimeout(function() {
+			seventhMove()
+		}, 1000);
 	}
 }
 
 function eighthMove() {
-	console.log(l)	
+	console.log(l)
 	l += -50;
 	$("#head").offset({
 		top : t,
 		left : l
 	});
 	positionListenerDemo(l, t);
-	if (l < 230){
+	if (l < 230) {
 		console.log(l, t)
 		clearTimeout(A);
 		console.log(A)
 	} else {
-		A = setTimeout(function(){ eighthMove() }, 1000);
+		A = setTimeout(function() {
+			eighthMove()
+		}, 1000);
 	}
 }
 
@@ -325,13 +362,15 @@ function ninthMove() {
 		left : l
 	});
 	positionListenerDemo(l, t);
-	if (t < 324){
+	if (t < 324) {
 		turn();
 		console.log(l, t)
 		clearTimeout(B);
 		console.log(B)
 	} else {
-		B = setTimeout(function(){ ninthMove() }, 1000);
+		B = setTimeout(function() {
+			ninthMove()
+		}, 1000);
 	}
 }
 
@@ -339,6 +378,6 @@ function ninthMove() {
 function positionListenerDemo() {
 	var listenerx = l;
 	var listenery = t;
-	//console.log(listenerx, listenery);
+	// console.log(listenerx, listenery);
 	contextListener.setPosition(listenerx, listenery, 0);
 }
