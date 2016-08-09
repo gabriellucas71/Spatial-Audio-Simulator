@@ -1,5 +1,4 @@
 //--- Load Audio files and position variables.
-
 var l = 418;
 var t = 318;
 var Xdegree = 0;
@@ -31,24 +30,22 @@ for (var i = 1; i < 5; i++) {
 	oscillator[baseString + i] = context.createOscillator();
 	oscillator[baseString + i].start();
 	oscillator[baseString + i].type = 'square';
-	panner[i].setPosition(source[i].src.offsetLeft, source[i].src.offsetTop, 0);
+	panner[i].setPosition(source[i].src.offsetLeft, 0, source[i].src.offsetTop);
 }
 oscillator[baseString + 1].frequency.value = 50;
-oscillator[baseString + 2].frequency.value = 500;
-oscillator[baseString + 3].frequency.value = 300;
-oscillator[baseString + 4].frequency.value = 80;
-	
-//Sources attributes.
-panner[1].setOrientation(1, 0, 0);
-panner[2].setOrientation(1, 0, 0);
-panner[3].setOrientation(1, 0, 0);
-panner[4].setOrientation(1, 0, 0);
+oscillator[baseString + 2].frequency.value = 100;
+oscillator[baseString + 3].frequency.value = 200;
+oscillator[baseString + 4].frequency.value = 400;
+
+panner[2].setOrientation(-1, 0, 0);
+panner[4].setOrientation(-1, 0, 0);
+
 
 //Listener attributes.
 contextListener.setPosition(360, 0, 260);
-contextListener.setOrientation(1,0,0,0,1,0);
-//contextListener.setOrientation(0, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)),0,1,0);
-console.log (Xdegree, Ydegree, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)))
+//contextListener.setOrientation(1,0,0,0,1,0);
+contextListener.setOrientation(Math.cos(Xdegree * (Math.PI / 180)), 0, -Math.cos(Ydegree * (Math.PI / 180)),0,1,0);
+console.log (Xdegree, Ydegree, Math.cos(Xdegree * (Math.PI / 180)), 0, -Math.cos(Ydegree * (Math.PI / 180)))
 
 //--- Drag elements with defined classes.
 $("#head").draggable({
@@ -108,7 +105,7 @@ function positionListener(event, ui) {
 	var listenerx = ui.position.left;
 	var listenery = ui.position.top;
 	console.log(listenerx, listenery);
-	contextListener.setPosition(listenerx, listenerx, 0);
+	contextListener.setPosition(listenerx, 0, listenery);
 }
 
 //--- Get the position of Sources while dragging and sets the panner position.
@@ -120,14 +117,13 @@ function positionSources(event, ui) {
 	console.log(srcNumber)
 	source[srcNumber].x = ui.position.left;
 	source[srcNumber].y = ui.position.top;
-	panner[srcNumber].setPosition(ui.position.left, 0,ui.position.top);
+	panner[srcNumber].setPosition(ui.position.left, 0, ui.position.top);
 }
 
 //--- Turn listener and set Listener orientation.
 function turn() {
 	Xdegree += 90;
 	Ydegree += 90;
-	console.log(Xdegree, Ydegree)
 	$("#head").css({
 		'-webkit-transform' : "rotate(" + -Xdegree + "deg)",
 		'-moz-transform' : "rotate(" + -Xdegree + "deg)",
@@ -135,8 +131,8 @@ function turn() {
 		'-o-transform' : "rotate(" + -Xdegree + "deg)",
 		'transform' : "rotate(" + -Xdegree + "deg)"
 	});
-	contextListener.setOrientation(0, Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)),0,1,0);
-	console.log(Math.sin(Xdegree * (Math.PI / 180)), Math.sin(Ydegree * (Math.PI / 180)))
+	contextListener.setOrientation(Math.cos(Xdegree * (Math.PI / 180)), 0, -Math.cos(Ydegree * (Math.PI / 180)),0,1,0);
+	console.log (Xdegree, Ydegree, Math.cos(Xdegree * (Math.PI / 180)), 0, -Math.cos(Ydegree * (Math.PI / 180)))
 }
 
 //--- Turn on all sound sources.
@@ -341,5 +337,5 @@ function positionListenerDemo() {
 	var listenerx = l;
 	var listenery = t;
 	//console.log(listenerx, listenery);
-	contextListener.setPosition(listenerx, listenery, 0);
+	contextListener.setPosition(listenerx, 0, listenery);
 }
